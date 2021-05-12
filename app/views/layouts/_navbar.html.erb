@@ -13,8 +13,6 @@
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'Task-Board一覧', tasks_path %></li>
               <li class="dropdown-item"><%= link_to 'Task-Board新規', new_task_path %></li>
-              <li class="dropdown-item"><%= link_to 'アカウント詳細', user_path(current_user) %></li>
-              <li class="dropdown-item"><%= link_to 'プロフィール変更', edit_user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
             </ul>

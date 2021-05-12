@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :create, :edit, :update]
+  resources :users, only: [:create]
   
   # get '/', to: 'tasks#index' ↓トップページが２個？
   #get '/', to: 'tasks#index'
