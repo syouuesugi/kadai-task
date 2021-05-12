@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # トップページはrootを使って設定（get）
   #root to: 'toppages#index'
   get '/', to: 'toppages#index'
-  
+
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
