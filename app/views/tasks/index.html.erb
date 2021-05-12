@@ -6,9 +6,12 @@
     <% @tasks.each do |task| %>
     <!-- if文で作成-->
     <!-- ユーザのタスクだった場合リンク -->
-    
-    <li><%= link_to task.id, task %> : <%= task.status %> &gt; <%= task.content %></li>
-    <!-- ユーザのタスクじゃない場合文字 -->
+        <% if current_user == task.user %>
+            <li><%= link_to task.id, task %> : <%= task.status %> &gt; <%= task.content %></li>
+        <!-- ユーザのタスクじゃない場合文字 -->
+        <% else %>
+            <li><%= task.id %>: <%= task.status %> &gt; <%= task.content %></li>
+        <% end %>
     
     <% end %>
 </ul>
