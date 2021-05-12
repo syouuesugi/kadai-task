@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'toppages#index'
+  # トップページはrootを使って設定（get）
+  #root to: 'toppages#index'
+  get '/', to: 'toppages#index'
+  
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create, :edit, :update]
   
+  # get '/', to: 'tasks#index' ↓トップページが２個？
+  #get '/', to: 'tasks#index'
   root to: 'tasks#index'
   resources :tasks
 end

@@ -3,5 +3,8 @@
 <p><%= @task.content %></p>
 
 <%= link_to 'タスク管理一覧に戻る', tasks_path %>
-<%= link_to 'このタスクを編集する', edit_task_path(@task) %>
-<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<!-- if文ユーザのタスクか？-->
+<% if current_user == @task.user %>
+    <%= link_to 'このタスクを編集する', edit_task_path(@task) %>
+    <%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<% end %>
