@@ -1,22 +1,13 @@
 Rails.application.routes.draw do
-  # トップページはrootを使って設定（get）
-  #root to: 'toppages#index'
   get '/', to: 'toppages#index'
-  
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  
   get 'signup', to: 'users#new'
-  #post 'signup', to: 'users#create'
   resources :users, only: [:create]
   
-  
-  # get '/', to: 'tasks#index' ↓トップページが２個？
-  #get '/', to: 'tasks#index'
-  #重複 task#index?
   root to: 'tasks#index'
   resources :tasks
 end
