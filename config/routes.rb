@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/', to: 'toppages#index'
+  #get '/', to: 'toppages#index'
+  root to: 'toppages#index'
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, only: [:create]
   
-  root to: 'tasks#index'
+  #root to: 'tasks#index'
+  get '/', to: 'tasks#index'
   resources :tasks
 end
