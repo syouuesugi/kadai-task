@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy, :edit, :show]
+  #correct_userによる制限CRUD制限
+  before_action :correct_user, only: [:destroy, :edit, :show, :update,]
   def index
-    @tasks=Task.all
+    @tasks=current_user.tasks.order(id: :desc).page(params[:page])
+    #@tasks=Task.order(id: :desc).page(params[:page])
   end
 
   def show

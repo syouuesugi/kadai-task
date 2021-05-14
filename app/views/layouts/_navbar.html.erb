@@ -11,7 +11,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item"><%= link_to 'Task-Board一覧', tasks_path %></li>
+              <li class="dropdown-item"><%= link_to 'Task-Board一覧', root_path %></li>
               <li class="dropdown-item"><%= link_to 'Task-Board新規', new_task_path %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
